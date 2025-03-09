@@ -1,0 +1,586 @@
+{
+	"info": {
+		"_postman_id": "480d8b01-37bc-439b-9518-37985556dbfd",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42698679"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "registerNewUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"newAdminTest\",\r\n  \"email\": \"p.texas92@gmail.com\",\r\n  \"password\": \"ledi\",\r\n  \"roles\":[\r\n    \"ROLE_ADMIN\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"ledi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "Admin Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc0MTEyNDE4MCwiZXhwIjoxNzQxMTYwMTgwfQ.4YjsFXr6IUycC140bPcI4cAZN0RrzFFMQAF_2bGgiEw",
+								"description": "Token to Users",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AdminDeleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlciIsImlhdCI6MTc0MTI2ODc4NSwiZXhwIjoxNzQxMzA0Nzg1fQ.bzaNcAb1r1DMhWhVMtR87uttIzFWVv_C0mF0qfUWV_0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/admin/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Get All users with filters",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzZXJ4aG8iLCJpYXQiOjE3NDE0MTYxNDgsImV4cCI6MTc0MTQ1MjE0OH0.fGqYqzL_3-EpzUZzXNgndjW2tD05joYHoRGawBpJaHI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/admin/all-users/ROLE_ADMIN/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"all-users",
+								"ROLE_ADMIN",
+								"0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "applications",
+			"item": [
+				{
+					"name": "userApplyToJob",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "UploadResume",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlcnJvciIsImlhdCI6MTc0MTUwODAzMiwiZXhwIjoxNzQxNTQ0MDMyfQ.THw5Xe-PnMOIi7Nd6WkbW039NzOldYFpPzm3ELQOPEo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Program Files/Google/Chrome/Application/chrome.exe"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/5/upload-resume",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"5",
+								"upload-resume"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllJobs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlcnJvciIsImlhdCI6MTc0MTQ2NTMwNSwiZXhwIjoxNzQxNTAxMzA1fQ.FeEv1Er5tMwprmH9gK1vS4LUp9Favwjopu4VfAFyJQ4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/jobs/0?location=Burrel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"jobs",
+								"0"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "Software Engineer",
+									"disabled": true
+								},
+								{
+									"key": "location",
+									"value": "Burrel"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAppliedJobs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlcnJvciIsImlhdCI6MTc0MTQ1NDcyMywiZXhwIjoxNzQxNDkwNzIzfQ.xO06hXwR9a2251Jw6we7bmJy24M7kRcpOUSu_I7JILw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/appliedJobs/0?status=PENDING",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"appliedJobs",
+								"0"
+							],
+							"query": [
+								{
+									"key": "jobTitle",
+									"value": "Software Engineer",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "PENDING"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "employer",
+			"item": [
+				{
+					"name": "EmployerGetAllJobs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXBsb3llclRlc3QiLCJpYXQiOjE3NDE0MzM5OTksImV4cCI6MTc0MTQ2OTk5OX0.27X6JM9E87WZ6e4yInXVWi1axgzVjTCyg-dXF0p1-Ps",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/employer/jobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"employer",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EmployerPostJob",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXBsb3llclRlc3QiLCJpYXQiOjE3NDE0MzM5OTksImV4cCI6MTc0MTQ2OTk5OX0.27X6JM9E87WZ6e4yInXVWi1axgzVjTCyg-dXF0p1-Ps",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"SomethingElse\",\r\n    \"description\":\"Software Engineer Description\",\r\n    \"location\":\"Burrel\",\r\n    \"minPay\": 100000,\r\n    \"maxPay\": 2000003\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/employer/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"employer",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EmployerGetAllJobsByEmployer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXBsb3llclRlc3QiLCJpYXQiOjE3NDE0MzM5OTksImV4cCI6MTc0MTQ2OTk5OX0.27X6JM9E87WZ6e4yInXVWi1axgzVjTCyg-dXF0p1-Ps",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"location\":\"Burrel\",\r\n    \"JobTitle\":\"Software Engineer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/employer/jobs/7/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"employer",
+								"jobs",
+								"7",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUsersWhoAppliedToJobs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXBsb3llclRlc3QiLCJpYXQiOjE3NDE0MzM5OTksImV4cCI6MTc0MTQ2OTk5OX0.27X6JM9E87WZ6e4yInXVWi1axgzVjTCyg-dXF0p1-Ps",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/employer/applicantsToJob/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"employer",
+								"applicantsToJob",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateJobApplication",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXBsb3llclRlc3QiLCJpYXQiOjE3NDE0MzM5OTksImV4cCI6MTc0MTQ2OTk5OX0.27X6JM9E87WZ6e4yInXVWi1axgzVjTCyg-dXF0p1-Ps",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"ACCEPTED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/employer/update/3/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"employer",
+								"update",
+								"3",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addReview",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXBsb3llclRlc3QiLCJpYXQiOjE3NDE0MzM5OTksImV4cCI6MTc0MTQ2OTk5OX0.27X6JM9E87WZ6e4yInXVWi1axgzVjTCyg-dXF0p1-Ps",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"review for job\",\r\n    \"description\":\"Description for job\",\r\n    \"rating\":5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/employer/jobs/review/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"employer",
+								"jobs",
+								"review",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "downloadResume",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXBsb3llclRlc3QiLCJpYXQiOjE3NDE1MDgzNjIsImV4cCI6MTc0MTU0NDM2Mn0.DSMcno0EZ2DtVmnsb8Jb4IW5OnpmlxG37jUZdL8L9V8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/employer/3/download-resume",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"employer",
+								"3",
+								"download-resume"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "public",
+			"item": [
+				{
+					"name": "getReviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/public/reviews/0?sorted=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"public",
+								"reviews",
+								"0"
+							],
+							"query": [
+								{
+									"key": "sorted",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
