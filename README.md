@@ -61,7 +61,9 @@ spring.datasource.username=root
 spring.datasource.password=your_password
 
 Run: mvn clean install
+
 Run: mvn spring-boot:run
+
 Access API at: http://localhost:8080
 
 Testing
